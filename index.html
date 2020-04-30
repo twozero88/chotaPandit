@@ -51,20 +51,20 @@
         <a>Screenshot & challenge your friends</a>
       </div>
       <script>
-      window.addEventListener('touchstart', function() {
+//       window.addEventListener('touchstart', function() {
 
-        // create empty buffer
-        var buffer = myContext.createBuffer(1, 1, 22050);
-        var source = myContext.createBufferSource();
-        source.buffer = buffer;
+//         // create empty buffer
+//         var buffer = myContext.createBuffer(1, 1, 22050);
+//         var source = myContext.createBufferSource();
+//         source.buffer = buffer;
 
-        // connect to output (your speakers)
-        source.connect(myContext.destination);
+//         // connect to output (your speakers)
+//         source.connect(myContext.destination);
 
-        // play the file
-        source.noteOn(0);
+//         // play the file
+//         source.noteOn(0);
 
-        }, false);
+//         }, false);
       document.onkeydown = function(evt) {
         evt = evt || window.event;
         if (evt.keyCode == 32 || evt.keyCode == 38) {
