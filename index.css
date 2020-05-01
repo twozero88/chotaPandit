@@ -8,7 +8,7 @@
   height: 100vh;
   z-index: 1;
   overflow: visible;
-  background: #fff url('loader.gif') no-repeat center center;
+  /*background: #fff url('loader.gif') no-repeat center center;*/
 }
 
  .navbar {
