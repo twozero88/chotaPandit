@@ -67,7 +67,10 @@
 
     
     <div class="navbar">
-        <a id="highScore" class="active" onclick='const soundEffect = new Audio();soundEffect.play();'>Touch Here if you hear no sounds</a>
+        <a id="highScore" class="active" onclick="const soundEffect = new Audio();soundEffect.play();
+        soundEffect.src = 'assets/audio_files/smlr/Paani.mp3';
+        soundEffect.play();
+        ">Touch Here if you hear no sounds</a>
         <a><div id="info"></div></a>
         <a href="/about.html">About this Site</a>
       </div>
