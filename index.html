@@ -65,16 +65,19 @@
 
 
     
+
+
+
     <div class="navbar">
         <button id="highScore" class="active" onclick="const soundEffect = new Audio();soundEffect.play();
         soundEffect.src = 'assets/audio_files/smlr/Paan.mp3';
         soundEffect.play();
-        ">Touch Here if you hear no sounds</button>
+        ">Touch anywhere or Press Spacebar to start</button>
         <a><div id="info"></div></a>
         <a href="/about.html">About this Site</a>
       </div>
       <script>
-        var text = ["Share & challenge your friends", "Use headphones for better experience", "#ChotaPandit","#StaySafe"];
+        var text = ["Share & challenge your friends", "Use headphones for better experience", "#ChotaPandit","#StaySafe","No Sound For iOS users rn.Sorry"];
         var counter = 0;
         var elem = document.getElementById("info");
         var inst = setInterval(change, 3000);
