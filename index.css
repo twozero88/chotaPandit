@@ -98,12 +98,11 @@ html, body {
 
 .offline .controller {
   background: rgba(247, 247, 247, .1);
-  height: 80vh;
+  height: 65vh;
   left: 0;
   position: absolute;
   top: 0;
   width: 100vw;
-  margin-bottom: 20vh;
   z-index: 1;
 }
 
