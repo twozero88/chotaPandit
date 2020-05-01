@@ -98,7 +98,7 @@ html, body {
 
 .offline .controller {
   background: rgba(247, 247, 247, .1);
-  height: 80;
+  height: 80vh;
   left: 0;
   position: absolute;
   top: 0;
