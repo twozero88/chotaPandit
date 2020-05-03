@@ -9,7 +9,7 @@
 
   gtag('config', 'UA-120953638-2');
 </script>
-
+<link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
 <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5b9ad6a8a51ed30011fe6d97&product=inline-share-buttons'async='async'></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
@@ -73,11 +73,18 @@
         soundEffect.src = 'assets/audio_files/smlr/Paan.mp3';
         soundEffect.play();
         ">Touch anywhere or Press Spacebar to start</button>
-        <a><div id="info"></div></a>
+        <a><div id="info" onclick="
+        if (document.body.style.backgroundColor=='white'){
+            document.body.style.backgroundColor = 'black';
+        }
+        else{
+            document.body.style.backgroundColor = 'white';
+        }
+        "></div></a>
         <a href="/about.html">About this Site</a>
       </div>
       <script>
-        var text = ["Share & challenge your friends using #ChotaPandit", "Use headphones for better experience","No Sound For iOS users rn.Sorry","Add to home screen and play offline."];
+        var text = ["Share & challenge using #ChotaPandit", "Use headphones for better experience","No Sound For iOS users rn.Sorry","Add to home screen and play offline.","Tap here to switch Day/Night"];
         var counter = 0;
         var elem = document.getElementById("info");
         var inst = setInterval(change, 3000);

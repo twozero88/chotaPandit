@@ -6,8 +6,10 @@ var filesToCache = [
   '/index.css',
   '/main.js',
   '/index.js',
-  '/background.jpg',
-  '/loader.gif'
+  '/loader.gif',
+  '/about.html',
+  '/assets/icon-512x512.png',
+  '/assets/audio_files/bb.mp3'
 ];
 
 /* Start the service worker and cache all of the app's content */
