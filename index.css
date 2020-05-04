@@ -32,7 +32,7 @@
   font-size: 17px;
 }
 .navbar button{
-  height:6vh;
+  height:7vh;
   font-family: 'Questrial', sans-serif;
   width:100%;
   text-align: center;
@@ -129,8 +129,8 @@ html, body {
   top: 0;
   width: 100vw;
   z-index: 1;
-  border-bottom: #4CAF50;
-  border-style: solid;
+  /*border-bottom: #4CAF50;*/
+  /*border-style: solid;*/
 
 }
 
