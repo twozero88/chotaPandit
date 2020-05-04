@@ -4,11 +4,8 @@
 // extract from chromium source code by @liuwayong
 alert("1");
 function opHS2(arr){
-    var out = "";
-    var i;
-    for(i = 0; i < arr.length; i++) {
-        out += arr[i].score;
-    }
+    var out = arr[0].score;
+    console.log('OP');
     console.log(out);
     return out;
 }
