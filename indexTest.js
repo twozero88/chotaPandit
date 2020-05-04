@@ -2,12 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 // extract from chromium source code by @liuwayong
+function opHS2(arr){
+    var out = "";
+    var i;
+    for(i = 0; i < arr.length; i++) {
+        out += arr[i].score;
+    }
+    return out;
+
+}
 function getHS(){
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) { 
         var myArr = JSON.parse(this.responseText);
-        return myArr[0].score;
+        opHS2(myArr);
         }
   };
   xhttp.open("GET", "https://chotapandit.000webhostapp.com/highScore.php", true);
