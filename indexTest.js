@@ -2,16 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 // extract from chromium source code by @liuwayong
-(function () {
-    'use strict';
-    /**
-     * T-Rex runner.
-     * @param {string} outerContainerId Outer containing element id.
-     * @param {Object} opt_config
-     * @constructor
-     * @export
-     */
-    function getHS(){
+alert("works");
+function getHS(){
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) { 
@@ -45,6 +37,16 @@
       xhttp.send();
     }
   
+
+(function () {
+    'use strict';
+    /**
+     * T-Rex runner.
+     * @param {string} outerContainerId Outer containing element id.
+     * @param {Object} opt_config
+     * @constructor
+     * @export
+     */
     function Runner(outerContainerId, opt_config) {
         // Singleton
         if (Runner.instance_) {
@@ -829,10 +831,10 @@
                 this.highestScore = Math.ceil(this.distanceRan);
                 this.distanceMeter.setHighScore(this.highestScore);
                 document.getElementById("highScore").innerHTML ="#ChotaPandit Highscore "+Math.ceil(this.highestScore/40);
-                saveScore(this.highestScore/40);
-                if (getHS()<this.highestScore/40){
-                    alert("You have made a New Highscore");
-                }
+                // saveScore(this.highestScore/40);
+                // if (getHS()<this.highestScore/40){
+                //     alert("You have made a New Highscore");
+                // }
             }
 
             // Reset the time clock.
