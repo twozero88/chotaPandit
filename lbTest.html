@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120953638-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-120953638-2');
+</script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name='description' content='Chota Pandit is a game inspired from the movie Bhool Bhulaiyaa.Chota Pandit sees Monjhulika and starts acting differently.As a temporary solution, Dr. Aditya Shrivastav asks him to stay away from water.Will Chota Pandit succeed in his mission? Play the game now'>
+    <meta name="keywords" content="Chota Pandit, Bhool Bhulaiyaa, Akshay Kumar, Johnny Lever, Chota Pandit Game, Paani Game">
+    <link rel="icon" href="icons/icon-152x152.png" type="image/x-icon">
+    <meta property="og:title" content="Chota Pandit Game">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://chotapandit.com">
+    <meta property="og:image" content="/assets/chota_pandit.png">
+    <meta property="og:site_name" content="Chota_Pandit">
+    <meta property="og:description" content="Chota Pandit.Bas Paani se bachna hai.">
+    <meta name="robots" content="index, follow" />
+</head>
+
+<body onload="init()">
+<!-- NAVBAR -->
+<div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper black">
+        <a href="#!" class="brand-logo">Chota Pandit</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+ <h3 style="text-align: center;">Leaderboard</h3>
+  <div class="row">
+  <div class="col s1 m3"></div>
+  <div class="col s10 m6">
+  <div class="row">
+    <div class="col s12 m12">
+      <div class="card green darken-1">
+        <div style="text-align: center;"class="card-content white-text">
+          <span class="card-title">Current High Score</span>
+          <h4><p id="current"></p></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+ <h4 style="text-align: center;">Globl Top 10</h4>
+ <table class="centered" >
+        <thead>
+          <tr>
+           	 <th>Rank</th>
+              <th>Name</th>
+              <th>Score</th>
+          </tr>
+        </thead>
+
+        <tbody id="demo">
+        </tbody>
+      </table></div>
+<div class="col s1 m3"></div>
+</div>
+<script>
+function op(arr) {
+    var out = "";
+    var i;
+    for(i = 0; i < arr.length; i++) {
+        out += '<tr><td>'+(i+1)+'</td><td>'+arr[i].name + '</td><td> ' +
+        arr[i].score +'</td></tr>';
+    }
+    document.getElementById("demo").innerHTML = out;
+}
+
+function opHS(arr) {
+    var out = "";
+    var i;
+    for(i = 0; i < arr.length; i++) {
+        out += arr[i].name + ' - ' +
+        arr[i].score;
+    }
+    document.getElementById("current").innerHTML = out;
+}
+
+
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) { 
+        var myArr = JSON.parse(this.responseText);
+        op(myArr);
+        }
+  };
+  xhttp.open("GET", "https://chotapandit.000webhostapp.com/readScore.php", true);
+  xhttp.send();
+}
+function getHS(){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) { 
+        var myArr = JSON.parse(this.responseText);
+        opHS(myArr);
+        }
+  };
+  xhttp.open("GET", "https://chotapandit.000webhostapp.com/highScore.php", true);
+  xhttp.send();
+}
+function init(){
+	loadDoc();
+	getHS();
+}
+
+// function saveScore(highScore){
+// var xhttp = new XMLHttpRequest();
+//   xhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+ 
+//     }
+//   };
+//   xhttp.open("GET", "https://chotapandit.000webhostapp.com/addScore.php?name=test&score="+highScore, true);
+//   xhttp.send();
+//   // xhttp.send("name="+getCookie("username")+"&score="+highScore);
+// }
+</script>
+
+</body>
+</html>
