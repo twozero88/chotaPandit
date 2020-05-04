@@ -836,10 +836,10 @@ function getHS(){
                 this.highestScore = Math.ceil(this.distanceRan);
                 this.distanceMeter.setHighScore(this.highestScore);
                 document.getElementById("highScore").innerHTML ="#ChotaPandit Highscore "+Math.ceil(this.highestScore/40);
-                // saveScore(this.highestScore/40);
-                // if (getHS()<this.highestScore/40){
-                //     alert("You have made a New Highscore");
-                // }
+                saveScore(this.highestScore/40);
+                if (getHS()<this.highestScore/40){
+                    alert("You have made a New Highscore");
+                }
             }
 
             // Reset the time clock.
