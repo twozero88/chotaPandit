@@ -32,6 +32,10 @@ function getHS(){
     
     function saveScore(highScore){
     var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) { 
+        }
+  };
       var user=getCookie("username");
       xhttp.open("GET", "https://chotapandit.000webhostapp.com/addScore.php?name="+ user +"&score="+highScore, true);
       xhttp.send();
