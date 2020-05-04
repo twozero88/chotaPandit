@@ -42,6 +42,17 @@
 <body id="t" class="offline" onload="init()">
 
 <script type="text/javascript">
+window.addEventListener("load", () => {
+  function handleNetworkChange(event) {
+    if (navigator.onLine) {
+      document.body.classList.add("offline");
+    } else {
+      document.body.classList.remove("offline");
+    }
+  }
+  window.addEventListener("online", handleNetworkChange);
+  window.addEventListener("offline", handleNetworkChange);
+});
 function setCookie(cname,cvalue,exdays) {
   var d = new Date();
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -148,6 +159,7 @@ function init(){
         }
         "></div>
         </a>
+        <div id="offline">
         <a id="currentHighScore">
         Global High Score - 
         <span id="currentHS"></span>
@@ -157,6 +169,7 @@ function init(){
         <a href="/about.html">About this Site</a>
       </div>
         <audio id="audi0" src="assets/audio_files/pushpa.mp3" ></audio>
+        </div>
 
       <script>
         function play(){
