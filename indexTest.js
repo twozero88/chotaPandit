@@ -2,7 +2,6 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 // extract from chromium source code by @liuwayong
-alert("works");
 function getHS(){
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -837,7 +836,8 @@ function getHS(){
                 this.distanceMeter.setHighScore(this.highestScore);
                 document.getElementById("highScore").innerHTML ="#ChotaPandit Highscore "+Math.ceil(this.highestScore/40);
                 saveScore(this.highestScore/40);
-                if (getHS()<this.highestScore/40){
+                console.log(getHS())
+                if (parseInt(getHS())<this.highestScore/40){
                     alert("You have made a New Highscore");
                 }
             }
