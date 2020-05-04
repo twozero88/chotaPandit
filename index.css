@@ -32,6 +32,7 @@
   font-size: 17px;
 }
 .navbar button{
+  height:6vh;
   font-family: 'Questrial', sans-serif;
   width:100%;
   text-align: center;
@@ -47,10 +48,12 @@
 }
 
 #leaderBoard{
+  height:4vh;  
   width: 50%;
   background-color: DodgerBlue;
 }
 #currentHighScore{
+  height:4vh;  
   background: #f1f1f1;
   width:50%;
   color: black;
@@ -120,12 +123,15 @@ html, body {
 
 .offline .controller {
   /*background: rgba(247, 247, 247, .1);*/
-  height: 72.5%;
+  height: 75vh;
   left: 0;
   position: absolute;
   top: 0;
   width: 100vw;
   z-index: 1;
+  border-bottom: #4CAF50;
+  border-style: solid;
+
 }
 
 #offline-resources {
