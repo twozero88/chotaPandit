@@ -2,7 +2,6 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 // extract from chromium source code by @liuwayong
-alert("2");
     function getCookie(cname) {
       var name = cname + "=";
       var decodedCookie = decodeURIComponent(document.cookie);
@@ -829,6 +828,7 @@ alert("2");
                 var globalHS=document.getElementById("currentHS").innerHTML;
                 console.log(globalHS);
                 if (parseInt(globalHS)<this.highestScore/40){
+                     document.getElementById("currentHS").innerHTML=this.highestScore/40;
                     alert("You have made a New Highscore");
                 }
             }
