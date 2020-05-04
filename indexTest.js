@@ -2,24 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 // extract from chromium source code by @liuwayong
-alert("1");
-function opHS2(arr){
-    var out = arr[0].score;
-    console.log('OP');
-    console.log(out);
-    return out;
-}
-function getHS(){
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) { 
-        var myArr = JSON.parse(this.responseText);
-        opHS2(myArr);
-        }
-  };
-  xhttp.open("GET", "https://chotapandit.000webhostapp.com/highScore.php", true);
-  xhttp.send();
-}
+alert("2");
     function getCookie(cname) {
       var name = cname + "=";
       var decodedCookie = decodeURIComponent(document.cookie);
@@ -843,8 +826,9 @@ function getHS(){
                 this.distanceMeter.setHighScore(this.highestScore);
                 document.getElementById("highScore").innerHTML ="#ChotaPandit Highscore "+Math.ceil(this.highestScore/40);
                 saveScore(this.highestScore/40);
-                console.log(getHS())
-                if (parseInt(getHS())<this.highestScore/40){
+                var globalHS=document.getElementById("currentHS").innerHTML;
+                console.log(globalHS);
+                if (parseInt(globalHS)<this.highestScore/40){
                     alert("You have made a New Highscore");
                 }
             }
