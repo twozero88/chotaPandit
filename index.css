@@ -51,10 +51,6 @@
   color: black;
 }
 
-.navbar a.active {
-  background-color: #4CAF50;
-  color: white;
-}
 
 html, body {
   padding: 0;
