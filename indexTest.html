@@ -71,7 +71,10 @@ function checkCookie() {
   if (user != "") {
     console.log(user);
   } else {
-     user = prompt("Please enter your name:","");
+     user = prompt("Please enter your name for LeaderBoard:","");
+     while(user=="" || user == null){
+        user = prompt("Please enter A VALID name for LeaderBoard:","");
+     }
      if (user != "" && user != null) {
        setCookie("username", user, 30);
      }
@@ -144,12 +147,23 @@ function init(){
             document.body.style.backgroundColor = 'white';
         }
         "></div>
+        </a>
+        <a id="currentHighScore">
         Global High Score - 
-        <span id="currentHS"></span></a>
         <span id="currentHS"></span>
+        </a>
+        <a id="leaderBoard" onclick="play()">Leaderboard</a>
+
         <a href="/about.html">About this Site</a>
       </div>
+        <audio id="audi0" src="assets/audio_files/pushpa.mp3" ></audio>
+
       <script>
+        function play(){
+        var audio = document.getElementById("audi0");
+        audio.play();
+        window.open("www.chotapandit.com/lbTest");
+                 }
         var text = ["Share & challenge using #ChotaPandit", "Use headphones for better experience","No Sound For iOS users rn.Sorry","Add to home screen and play offline.","Tap here to switch Day/Night"];
         var counter = 0;
         var elem = document.getElementById("info");
