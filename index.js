@@ -26,7 +26,7 @@
         }
   };
       var user=getCookie("username");
-      xhttp.open("GET", "https://chotapandit.000webhostapp.com/addScore.php?name="+ user +"&score="+highScore, true);
+      xhttp.open("GET", "https://chotapandit.online/addScore.php?name="+ user +"&score="+highScore, true);
       xhttp.send();
     }
   
