@@ -9,12 +9,18 @@
 
   gtag('config', 'UA-120953638-2');
 </script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
-<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5b9ad6a8a51ed30011fe6d97&product=inline-share-buttons'async='async'></script>
-    <meta charset="utf-8">
+
+<!-- <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5b9ad6a8a51ed30011fe6d97&product=inline-share-buttons'async='async'></script>
+ -->
+<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5eb1256de0a2909d"></script>
+
+     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
     <title >Chota Pandit : The runner</title>
-    <meta name='description' content='Chota Pandit is a game inspired from the movie Bhool Bhulaiyaa.Chota Pandit sees Monjhulika and starts acting differently.As a temporary solution, Dr. Aditya Shrivastav asks him to stay away from water.Will Chota Pandit succeed in his mission? Play the game now'>
+    <meta name='description' content='Chota Pandit is a game inspired from the movie Bhool Bhulaiyaa.Chota Pandit sees Monjhulika and starts acting differently.As a temporary solution, Dr. Aditya Shrivastav asks him to stay away from water.Will Chota Pandit succeed in his mission? Stuck in lockdown ? Play the game now.Now with a global leaderboard'>
+    <meta name="keywords" content="Chota Pandit, Bhool Bhulaiyaa movie, Akshay Kumar, Rajpal Yadav, Chota Pandit Game, Paani Game,Lockdown Game India,#chotapanditchallenge">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="black"/>
     <link rel="apple-touch-icon" href="icons/icon-152x152.png">
@@ -34,10 +40,11 @@
     <meta name="robots" content="index, follow" />
     <link rel="stylesheet" href="index.css">
     <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">  -->
-    <script src="indexTest.js"></script>
+    <script src="index.js"></script>
     <script src="loader.js"></script>
     <script data-ad-client="ca-pub-9527492623348536" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-</head>
+    
+  </head>
 
 <body id="t" class="offline" onload="init()">
 
@@ -58,7 +65,7 @@ function setCookie(cname,cvalue,exdays) {
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
   var expires = "expires=" + d.toGMTString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-  console.log( cname + "=" + cvalue + ";" + expires + ";path=/");
+  // console.log( cname + "=" + cvalue + ";" + expires + ";path=/");
 }
 
 function getCookie(cname) {
@@ -82,13 +89,14 @@ function checkCookie() {
   if (user != "") {
     console.log(user);
   } else {
-     user = prompt("Please enter your name for LeaderBoard:","");
-     while(user=="" || user == null){
-        user = prompt("Please enter A VALID name for LeaderBoard:","");
-     }
-     if (user != "" && user != null) {
-       setCookie("username", user, 30);
-     }
+     window.open("www.chotapandit.com/login");
+     // user = prompt("Please enter your name for LeaderBoard:","");
+     // while(user=="" || user == null){
+     //    user = prompt("Please enter A VALID name for LeaderBoard:","");
+     // }
+     // if (user != "" && user != null) {
+     //   setCookie("username", user, 30);
+     // }
   }
 }
 function opHS(arr){
@@ -108,7 +116,7 @@ function getHS(){
         opHS(myArr);
         }
   };
-  xhttp.open("GET", "https://chotapandit.000webhostapp.com/highScore.php", true);
+  xhttp.open("GET", "https://chotapandit.online/highScore.php", true);
   xhttp.send();
 }
 
@@ -175,7 +183,7 @@ function init(){
         function play(){
         var audio = document.getElementById("audi0");
         audio.play();
-        window.open("lbTest");
+        window.open("leaderBoard");
                  }
         var text = ["Share & challenge using #ChotaPandit", "Use headphones for better experience","No Sound For iOS users rn.Sorry","Add to home screen and play offline.","Tap here to switch Day/Night"];
         var counter = 0;

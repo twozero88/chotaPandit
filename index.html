@@ -9,7 +9,10 @@
 
   gtag('config', 'UA-120953638-2');
 </script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+<meta name="google-signin-client_id" content="837473750855-02bu1o9696pc1n2373mkarfhagc0qsm4.apps.googleusercontent.com">
+
 <!-- <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5b9ad6a8a51ed30011fe6d97&product=inline-share-buttons'async='async'></script>
  -->
 <script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5eb1256de0a2909d"></script>
@@ -87,13 +90,14 @@ function checkCookie() {
   if (user != "") {
     console.log(user);
   } else {
-     user = prompt("Please enter your name for LeaderBoard:","");
-     while(user=="" || user == null){
-        user = prompt("Please enter A VALID name for LeaderBoard:","");
-     }
-     if (user != "" && user != null) {
-       setCookie("username", user, 30);
-     }
+     window.open("www.chotapandit.com/login");
+     // user = prompt("Please enter your name for LeaderBoard:","");
+     // while(user=="" || user == null){
+     //    user = prompt("Please enter A VALID name for LeaderBoard:","");
+     // }
+     // if (user != "" && user != null) {
+     //   setCookie("username", user, 30);
+     // }
   }
 }
 function opHS(arr){
