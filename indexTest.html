@@ -89,14 +89,14 @@ function checkCookie() {
   if (user != "") {
     console.log(user);
   } else {
-     window.open("www.chotapandit.com/login");
-     // user = prompt("Please enter your name for LeaderBoard:","");
-     // while(user=="" || user == null){
-     //    user = prompt("Please enter A VALID name for LeaderBoard:","");
-     // }
-     // if (user != "" && user != null) {
-     //   setCookie("username", user, 30);
-     // }
+     user = prompt("Please enter your name for LeaderBoard:","");
+     window.open("/login");
+     while(user=="" || user == null){
+        user = prompt("Please enter A VALID name for LeaderBoard:","");
+     }
+     if (user != "" && user != null) {
+       setCookie("username", user, 30);
+     }
   }
 }
 function opHS(arr){
