@@ -80,6 +80,20 @@
         <tbody id="demo">
         </tbody>
       </table></div>
+
+      <h4 style="text-align: center;">Recent 10</h4>
+      <table class="centered" >
+             <thead>
+               <tr>
+                   <th>Name</th>
+                   <th>Score</th>
+               </tr>
+             </thead>
+     
+             <tbody id="demo2">
+             </tbody>
+           </table></div>
+     
 <div class="col s1 m3"></div>
 </div>
 <script>
@@ -91,6 +105,15 @@ function op(arr) {
         arr[i].score +'</td></tr>';
     }
     document.getElementById("demo").innerHTML = out;
+}
+function op2(arr) {
+    var out = "";
+    var i;
+    for(i = 0; i < arr.length; i++) {
+        out += '<tr><td>'+arr[i].name + '</td><td> ' +
+        arr[i].score +'</td></tr>';
+    }
+    document.getElementById("demo2").innerHTML = out;
 }
 
 function opHS(arr) {
@@ -115,6 +138,18 @@ function loadDoc() {
   xhttp.open("GET", "https://chotapandit.online/readScore.php", true);
   xhttp.send();
 }
+function loadDoc2() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) { 
+        var myArr = JSON.parse(this.responseText);
+        op2(myArr);
+        }
+  };
+  xhttp.open("GET", "https://chotapandit.online/recent.php", true);
+  xhttp.send();
+}
+
 function getHS(){
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
