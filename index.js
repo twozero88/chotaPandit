@@ -26,7 +26,9 @@
         }
   };
       var user=getCookie("username");
-      xhttp.open("GET", "https://chotapandit.online/addScore.php?name="+ user +"&score="+highScore, true);
+      var usere=window.btoa(user);
+      var score=window.btoa(highScore);
+      xhttp.open("GET", "https://chotapandit.online/addScore.php?name="+ usere +"&score="+highScoree, true);
       xhttp.send();
     }
   
