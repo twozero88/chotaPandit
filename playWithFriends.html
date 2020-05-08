@@ -81,6 +81,7 @@ function addFriend() {
   console.log(femaile);
   xhttp.open("GET", "https://chotapandit.online/v2/addFriend.php?mail="+maile+"&femail="+femaile, true);
   xhttp.send();
+  loadDoc();
 }
 
 
@@ -96,6 +97,7 @@ function signUP(name,email,pic) {
   var emaile=window.btoa(email);
   xhttp.open("GET", "https://chotapandit.online/v2/signup.php?name="+namee+"&mail="+emaile+"&p="+pice, true);
   xhttp.send();
+  loadDoc();
 }
 
 
@@ -106,8 +108,8 @@ function onSignIn(googleUser) {
   console.log('Name: ' + profile.getName());
   console.log('Image URL: ' + profile.getImageUrl());
   console.log('Email: ' + profile.getEmail());
-  setCookie('email',profile.getName(),30);
-  setCookie('name',profile.getEmail(),30);
+  setCookie('email',profile.getEmail(),30);
+  setCookie('name',profile.getName(),30);
   var out = document.getElementById("out");
   var loggedIn = document.getElementById("loggedIn");
   out.style.display = "none";
