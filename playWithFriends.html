@@ -45,23 +45,6 @@ function check() {
       x.style.display = "none";      
   }
 }
-function init(){
-  var user=getCookie("email");
-  if (user != "") {
-      var x = document.getElementById("out");
-      x.style.display = "none";
-      var x = document.getElementById("loggedIn");
-      x.style.display = "block";      
-      document.getElementById("user-email").innerHTML = getCookie("email");
-
-  } 
-  else {
-      var x = document.getElementById("out");
-      x.style.display = "block";
-      var x = document.getElementById("loggedIn");
-      x.style.display = "none";      
-  }
-}
 function opFr2(arr) {
     var out = "";
     var i;
@@ -172,7 +155,25 @@ function onSignIn(googleUser) {
 
 </head>
 <body onload="init()">
-    
+<script type="text/javascript">
+function init(){
+  var user=getCookie("email");
+  if (user != "") {
+      var x = document.getElementById("out");
+      x.style.display = "none";
+      var x = document.getElementById("loggedIn");
+      x.style.display = "block";      
+      document.getElementById("user-email").innerHTML = getCookie("email");
+
+  } 
+  else {
+      var x = document.getElementById("out");
+      x.style.display = "block";
+      var x = document.getElementById("loggedIn");
+      x.style.display = "none";      
+  }
+}
+</script>
 <!-- NAVBAR -->
 <div class="navbar-fixed">
     <nav>
