@@ -5,7 +5,7 @@
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
     <script>
-function setCookie(cname,cvalue,exdays) {
+function setCookie2(cname,cvalue,exdays) {
   var d = new Date();
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
   var expires = "expires=" + d.toGMTString();
@@ -13,7 +13,7 @@ function setCookie(cname,cvalue,exdays) {
   // console.log( cname + "=" + cvalue + ";" + expires + ";path=/");
 }
 
-function getCookie(cname) {
+function getCookie2(cname) {
   var name = cname + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
   var ca = decodedCookie.split(';');
@@ -29,15 +29,15 @@ function getCookie(cname) {
   return "";
 }
 
-function check() {
-  var user=getCookie("email");
+function check2() {
+  var user=getCookie2("email");
   if (user != "") {
       // window.location.href = "https://www.chotapandit.com/play";
       var x = document.getElementById("out");
       x.style.display = "none";
       var x = document.getElementById("loggedIn");
       x.style.display = "block";      
-      document.getElementById("user-email").innerHTML = getCookie('email');
+      document.getElementById("user-email").innerHTML = getCookie2('email');
   } else {
       var x = document.getElementById("out");
       x.style.display = "block";
@@ -66,7 +66,7 @@ function loadDocFr() {
         alert('No such user.Please check the email with your friend.');        
         }
   };
-  var email=getCookie("email");
+  var email=getCookie2("email");
   var emaile=window.btoa(email);
   xhttp.open("GET", "https://chotapandit.online/v2/scores.php?email="+emaile, true);
   xhttp.send();
@@ -79,7 +79,7 @@ function addFriend() {
         console.log('Friend Added');
         }
   };
-  var mail=getCookie("email");
+  var mail=getCookie2("email");
   var maile=window.btoa(mail);
   var femail=document.getElementById("friendMail").value;
   var femaile=window.btoa(femail);
@@ -113,8 +113,8 @@ function onSignIn(googleUser) {
   console.log('Name: ' + profile.getName());
   console.log('Image URL: ' + profile.getImageUrl());
   console.log('Email: ' + profile.getEmail());
-  setCookie('email',profile.getEmail(),30);
-  setCookie('name',profile.getName(),30);
+  setCookie2('email',profile.getEmail(),30);
+  setCookie2('name',profile.getName(),30);
   var out = document.getElementById("out");
   var loggedIn = document.getElementById("loggedIn");
   out.style.display = "none";
@@ -154,16 +154,16 @@ function onSignIn(googleUser) {
     <meta name="google-signin-client_id" content="837473750855-02bu1o9696pc1n2373mkarfhagc0qsm4.apps.googleusercontent.com">
 
 </head>
-<body onload="init()">
+<body onload="init2()">
 <script type="text/javascript">
-function init(){
-  var user=getCookie("email");
+function init2(){
+  var user=getCookie2("email");
   if (user != "") {
       var x = document.getElementById("out");
       x.style.display = "none";
       var x = document.getElementById("loggedIn");
       x.style.display = "block";      
-      document.getElementById("user-email").innerHTML = getCookie("email");
+      document.getElementById("user-email").innerHTML = getCookie2("email");
 
   } 
   else {
