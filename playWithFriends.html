@@ -46,15 +46,16 @@ function check() {
   }
 }
 function init(){
-var user=getCookie("email");
+  var user=getCookie("email");
   if (user != "") {
-      // window.location.href = "https://www.chotapandit.com/play";
       var x = document.getElementById("out");
       x.style.display = "none";
       var x = document.getElementById("loggedIn");
       x.style.display = "block";      
       document.getElementById("user-email").innerHTML = getCookie("email");
-  } else {
+
+  } 
+  else {
       var x = document.getElementById("out");
       x.style.display = "block";
       var x = document.getElementById("loggedIn");
