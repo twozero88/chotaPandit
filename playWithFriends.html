@@ -62,7 +62,7 @@ function loadDocFr() {
         var myArr = JSON.parse(this.responseText);
         opFr2(myArr);
         }
-    else (this.readyState == 4  && this.status == 1) { 
+    elseif (this.readyState == 4  && this.status == 1) { 
         alert('No such user.Please check the email with your friend.');        
         }
   };
@@ -154,8 +154,9 @@ function onSignIn(googleUser) {
     <meta name="google-signin-client_id" content="837473750855-02bu1o9696pc1n2373mkarfhagc0qsm4.apps.googleusercontent.com">
 
 </head>
-<body onload='var user=getCookie("email");
+<body onload='  var user=getCookie("email");
   if (user != "") {
+      // window.location.href = "https://www.chotapandit.com/play";
       var x = document.getElementById("out");
       x.style.display = "none";
       var x = document.getElementById("loggedIn");
@@ -166,7 +167,8 @@ function onSignIn(googleUser) {
       x.style.display = "block";
       var x = document.getElementById("loggedIn");
       x.style.display = "none";      
-  };'>
+  }
+'>
     
 <!-- NAVBAR -->
 <div class="navbar-fixed">
