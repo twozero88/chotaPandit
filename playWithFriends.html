@@ -197,15 +197,15 @@ function onSignIn(googleUser) {
     <div class="col s12 m12">
       <div class="card blue darken-1">
         <div class="card-content white-text">
-          <a class="waves-effect waves-light btn" style="width: 100%;" href='/play.html'>Play Now</a>
+          <a class="waves-effect red waves-light btn" style="width: 100%;" href='/play.html'>Play Now</a>
           <span class="card-title">Your Email <span id="user-email"></span></span>
           <p>Add friends by entering their email</p>
           <br>
           <div class="row">
-          <div class="input-field col s12">
+          <div class="input-field col s12 white">
           <input type="email" class="validate" id="friendMail">
           <label for="friendMail">Email</label>
-          <a class="waves-effect waves-light btn" style="width: 100%;" onclick="addFriend()" name="Submit" >Add</a>
+          <a class="waves-effect waves-light btn red" style="width: 100%;" onclick="addFriend()" name="Submit" >Add</a>
           </div>
             <div id="leaderboard">
                <h4 style="text-align: center;">Your Friends and Their Scores</h4>
@@ -220,6 +220,8 @@ function onSignIn(googleUser) {
                     <tbody id="demo">
                     </tbody>
                   </table>
+          <a class="waves-effect red waves-light btn" style="width: 100%;" href='/play.html'>Play Now</a>
+
             </div>
 
       </div>
