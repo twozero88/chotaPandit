@@ -92,7 +92,9 @@ function addFriend() {
   var femaile=window.btoa(femail);
   console.log(maile);
   console.log(femaile);
-  xhttp.open("GET", "https://chotapandit.online/v2/addFriend.php?mail="+maile+"&femail="+femaile, true);
+  var unix = Math.round(+new Date()/1000)+2;
+  var unixe=window.btoa(unix);
+  xhttp.open("GET", "https://chotapandit.online/v2/addFriend.php?mail="+maile+"&femail="+femaile+"&pwd="unixe, true);
   xhttp.send();
   loadDocFr();
 }
@@ -108,7 +110,9 @@ function signUP(name,email,pic) {
   var namee=window.btoa(name);
   var pice=window.btoa(pic);
   var emaile=window.btoa(email);
-  xhttp.open("GET", "https://chotapandit.online/v2/signup.php?name="+namee+"&mail="+emaile+"&p="+pice, true);
+  var unixe=window.btoa(unix);
+  var unix = Math.round(+new Date()/1000)+2;
+  xhttp.open("GET", "https://chotapandit.online/v2/signup.php?name="+namee+"&mail="+emaile+"&p="+pice+"&pwd="+unixe, true);
   xhttp.send();
   loadDocFr();
 }
