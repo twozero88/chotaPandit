@@ -55,12 +55,16 @@ function opFr2(arr) {
     document.getElementById("demo").innerHTML = out;
 }
 
+function removeDuplicates(array) {
+  return array.filter((a, b) => array.indexOf(a) === b)
+};
+
 function loadDocFr() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) { 
         var myArr = JSON.parse(this.responseText);
-        opFr2(myArr);
+        opFr2(removeDuplicates(myArr));
         }
   };
   var email=getCookie("email");
