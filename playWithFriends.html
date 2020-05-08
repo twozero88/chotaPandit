@@ -46,7 +46,7 @@ function op(arr) {
     var out = "";
     var i;
     for(i = 0; i < arr.length; i++) {
-        out += '<tr><td>'+arr[i].name + '</td><td> ' +
+        out += '<tr><td>'+(i+1)+'</td><td>'+arr[i].name + '</td><td> ' +
         arr[i].score +'</td></tr>';
     }
     document.getElementById("demo").innerHTML = out;
@@ -193,9 +193,9 @@ function onSignIn(googleUser) {
     </div>
   </div>
 
-<div class="row" id='loggedIn' stlye="display:none;">
+<div class="row black-text text-darken-2" id='loggedIn' stlye="display:none;">
     <div class="col s12 m12">
-      <div class="card grey lighten-2 black-text text-darken-2 ">
+      <div class="card grey lighten-2">
         <div class="card-content white-text">
           <a class="waves-effect waves-light btn" style="width: 100%;" href='/play.html'>Play Now</a>
           <span class="card-title">Your Email <span id="user-email"></span></span>
