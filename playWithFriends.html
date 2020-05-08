@@ -77,7 +77,7 @@ function addFriend() {
   var maile=window.btoa(email);
   var femail=document.getElementById("friendMail").value;
   var femaile=window.btoa(femail);
-  xhttp.open("GET", "https://chotapandit.online/v2/addFriend.php?mail="+maile+"&femail="femaile, true);
+  xhttp.open("GET", "https://chotapandit.online/v2/addFriend.php?mail="+maile+"&femail="+femaile, true);
   xhttp.send();
 }
 
