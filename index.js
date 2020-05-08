@@ -28,7 +28,9 @@
       var user=getCookie("username");
       var usere=window.btoa(user);
       var scoree=window.btoa(highScore);
-      xhttp.open("GET", "https://chotapandit.online/addScore.php?name="+ usere +"&score="+scoree, true);
+      var unix = Math.round(+new Date()/1000);
+      var unixe=window.btoa(unix);
+      xhttp.open("GET", "https://chotapandit.online/addScore.php?name="+ usere +"&score="+scoree+"&pwd="+pwde, true);
       xhttp.send();
     }
   
