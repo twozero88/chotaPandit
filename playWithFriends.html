@@ -62,7 +62,7 @@ function loadDocFr() {
         var myArr = JSON.parse(this.responseText);
         opFr2(myArr);
         }
-    else{ 
+    else (this.readyState == 4  && this.status == 1) { 
         alert('No such user.Please check the email with your friend.');        
         }
   };
