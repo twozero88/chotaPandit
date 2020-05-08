@@ -115,6 +115,24 @@ function signUP(name,email,pic) {
   xhttp.open("GET", "https://chotapandit.online/v2/signup.php?name="+namee+"&mail="+emaile+"&p="+pice+"&pwd="+unixe, true);
   xhttp.send();
   loadDocFr();
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) { 
+        console.log('Friend Added');
+        }
+    else if (this.readyState == 4 && this.status == 400){
+        alert('No such user.Please check the email with your friend.'); 
+        console.log("No such user found.")
+    } 
+ 
+  };
+  var mail=getCookie("email");
+  var maile=window.btoa(mail);
+  console.log(maile);
+  var unix = Math.round(+new Date()/1000)+1;
+  var unixe=window.btoa(unix);
+  xhttp.open("GET", "https://chotapandit.online/v2/addFriend.php?mail="+maile+"&femail="+maile+"&pwd="+unixe, true);
+  xhttp.send();
 }
 
 
