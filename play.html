@@ -84,7 +84,6 @@ function opHS(arr){
 
 }
 function getHS(){
-  alert('getting hs');
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) { 
@@ -94,7 +93,7 @@ function getHS(){
   };
   var user=getCookie("email");
   var emaile=window.btoa(user);
-  xhttp.open("GET", "https://chotapandit.online/v2/highScore.php?email="+emailee, true);
+  xhttp.open("GET", "https://chotapandit.online/v2/highScore.php?email="+emaile, true);
   xhttp.send();
 }
 function check() {
