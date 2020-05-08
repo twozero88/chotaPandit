@@ -46,41 +46,172 @@
   <div class="row">
   <div class="col s1 m1"></div>
   <div class="col s10 m10">
-  <div class="row">
+  <div class="row" id = "out">
     <div class="col s12 m12">
       <div class="card blue darken-1">
         <div class="card-content white-text">
           <span class="card-title">Now Play with your friends</span>
-          <p>Login with google and challenge your friends.<br><h1 id="google-login" style="display:block;">Please login with google to continue..<br><br><div class="g-signin2" data-onsuccess="onSignIn"></div>
-</h1></p>
+          <p>Login with google and challenge your friends.<br>
+            <h1 id="google-login" style="display:none;">Please login with google to continue..<br><br><div class="g-signin2" data-onsuccess="onSignIn"></div>
+        </h1></p>
         </div>
+      </div>
+    </div>
+  </div>
+
+<div class="row" id='loggedIn' style='display: block;'>
+    <div class="col s12 m12">
+      <div class="card deep-orange lighten-2">
+        <div class="card-content white-text">
+          <a class="waves-effect waves-light btn" href='/play.html'>Play Now</a>
+          <span class="card-title">Your Email <span id="user-email"></span></span>
+          <p>Add friends by entering their email</p>
+          <br>
+          <div class="row">
+          <div class="input-field col s12">
+          <input id="email" type="email" class="validate" id="friendMail" onsubmit="addFriend();">
+          <label for="email">Email</label>
+          </div>
+          </div>
+            <div id="leaderboard">
+               <h4 style="text-align: center;">Your Friends and Their Scores</h4>
+             <table class="centered" >
+                    <thead>
+                      <tr>
+                         <th>Rank</th>
+                          <th>Name</th>
+                          <th>Score</th>
+                      </tr>
+                    </thead>
+                    <tbody id="demo">
+                    </tbody>
+                  </table>
+            </div>
+
+      </div>
       </div>
     </div>
   </div>
   </div>
 
   </div>
+
+  </div>
   <div class="col s1 m1"></div>
   </div>
-      <audio id="audio" src="assets/audio_files/bb.mp3" ></audio>
 
 <script>
+function setCookie(cname,cvalue,exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires=" + d.toGMTString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  // console.log( cname + "=" + cvalue + ";" + expires + ";path=/");
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
 function check() {
   var user=getCookie("email");
   if (user != "") {
       window.location.href = "https://www.chotapandit.com/play";
+      var x = document.getElementById("out");
+      x.style.display = "none";
+      var x = document.getElementById("loggedIn");
+      x.style.display = "block";      
+      document.getElementById("user-email").innerHTML = getCookie('email');
   } else {
-      var x = document.getElementById("google-login");
+      var x = document.getElementById("out");
       x.style.display = "block";
+      var x = document.getElementById("loggedIn");
+      x.style.display = "none";      
+
   }
 }
+function op(arr) {
+    var out = "";
+    var i;
+    for(i = 0; i < arr.length; i++) {
+        out += '<tr><td>'+arr[i].name + '</td><td> ' +
+        arr[i].score +'</td></tr>';
+    }
+    document.getElementById("demo").innerHTML = out;
+}
+
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) { 
+        var myArr = JSON.parse(this.responseText);
+        op(myArr);
+        }
+  };
+  var email=getCookie("email");
+  var emaile=window.btoa(email);
+  xhttp.open("GET", "https://chotapandit.online/v2/scores.php?email="+emaile, true);
+  xhttp.send();
+}
+
+function addFriend() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) { 
+        console.log('Friend Added')
+        }
+  };
+  var mail=getCookie("email");
+  var maile=window.btoa(email);
+  var femail=document.getElementById("friendMail").value;
+  var femaile=window.btoa(femail);
+  xhttp.open("GET", "https://chotapandit.online/v2/addFriend.php?mail="+maile+"&femail="femaile, true);
+  xhttp.send();
+}
+
+
+function signUP(name,email,pic) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) { 
+        console.log("Signed Up");
+        }
+  };
+  var namee=window.btoa(name);
+  var pice=window.btoa(pic);
+  var emaile=window.btoa(email);
+  xhttp.open("GET", "https://chotapandit.online/v2/signup.php?name="+namee+"mail="+emaile+"p="+pice, true);
+  xhttp.send();
+}
+
 
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId()); 
+  // console.log('ID: ' + profile.getId()); 
   console.log('Name: ' + profile.getName());
   console.log('Image URL: ' + profile.getImageUrl());
   console.log('Email: ' + profile.getEmail());
+  setCookie('email',profile.getName(),30);
+  setCookie('name',profile.getEmail(),30);
+  var out = document.getElementById("out");
+  var loggedIn = document.getElementById("loggedIn");
+  out.style.display = "none";
+  loggedIn.style.display = "block";
+  document.getElementById("user-email").innerHTML = profile.getEmail();
+  signUP(profile.getName(),profile.getEmail(),profile.getImageUrl());
+  // XHTML TO ADD USER
   // window.location.href = "https://www.chotapandit.com/play";
 }
 </script>
