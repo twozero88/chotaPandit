@@ -45,6 +45,22 @@ function check() {
       x.style.display = "none";      
   }
 }
+function init(){
+var user=getCookie("email");
+  if (user != "") {
+      // window.location.href = "https://www.chotapandit.com/play";
+      var x = document.getElementById("out");
+      x.style.display = "none";
+      var x = document.getElementById("loggedIn");
+      x.style.display = "block";      
+      document.getElementById("user-email").innerHTML = getCookie("email");
+  } else {
+      var x = document.getElementById("out");
+      x.style.display = "block";
+      var x = document.getElementById("loggedIn");
+      x.style.display = "none";      
+  }
+}
 function opFr2(arr) {
     var out = "";
     var i;
@@ -154,21 +170,7 @@ function onSignIn(googleUser) {
     <meta name="google-signin-client_id" content="837473750855-02bu1o9696pc1n2373mkarfhagc0qsm4.apps.googleusercontent.com">
 
 </head>
-<body onload='  var user=getCookie("email");
-  if (user != "") {
-      // window.location.href = "https://www.chotapandit.com/play";
-      var x = document.getElementById("out");
-      x.style.display = "none";
-      var x = document.getElementById("loggedIn");
-      x.style.display = "block";      
-      document.getElementById("user-email").innerHTML = getCookie("email");
-  } else {
-      var x = document.getElementById("out");
-      x.style.display = "block";
-      var x = document.getElementById("loggedIn");
-      x.style.display = "none";      
-  }
-'>
+<body onload='init()'>
     
 <!-- NAVBAR -->
 <div class="navbar-fixed">
