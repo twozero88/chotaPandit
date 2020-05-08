@@ -74,26 +74,28 @@ function getCookie(cname) {
   return "";
 }
 
-// function opHS(arr){
-//     var out = "";
-//     var i;
-//     for(i = 0; i < arr.length; i++) {
-//         out += arr[i].score;
-//     }
-//     document.getElementById("currentHS").innerHTML = out;
+function opHS(arr){
+    var out = "";
+    var i;
+    for(i = 0; i < arr.length; i++) {
+        out += arr[i].name + ":" +arr[i].score;
+    }
+    document.getElementById("currentHS").innerHTML = out;
 
-// }
-// function getHS(){
-//   var xhttp = new XMLHttpRequest();
-//   xhttp.onreadystatechange = function() {
-//     if (this.readyState == 4 && this.status == 200) { 
-//         var myArr = JSON.parse(this.responseText);
-//         opHS(myArr);
-//         }
-//   };
-//   xhttp.open("GET", "https://chotapandit.online/highScore.php", true);
-//   xhttp.send();
-// }
+}
+function getHS(){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) { 
+        var myArr = JSON.parse(this.responseText);
+        opHS(myArr);
+        }
+  };
+  var user=getCookie("email");
+  var emaile=window.btoa(user);
+  xhttp.open("GET", "https://chotapandit.online/v2/highScore.php?email="+emailee, true);
+  xhttp.send();
+}
 function check() {
   var user=getCookie("email");
   if (user == "") {
@@ -102,7 +104,7 @@ function check() {
 }
 function init(){
   check();
-  // getHS();
+  getHS();
 }
 </script>
     <div id="loader"></div>
@@ -148,7 +150,11 @@ function init(){
         "></div>
         </a>
         <div id="offline">
-        <a id="leaderBoard" style="width: 100%;" onclick="play()">Leaderboard</a>
+        <a id="currentHighScore">
+        Global High Score - 
+        <span id="currentHS"></span>
+        </a>
+        <a id="leaderBoard" onclick="play()">Leaderboard</a>
       </div>
         <audio id="audi0" src="assets/audio_files/pushpa.mp3" ></audio>
         </div>
@@ -157,7 +163,7 @@ function init(){
         function play(){
         var audio = document.getElementById("audi0");
         audio.play();
-        window.open("leaderBoard");
+        window.open("playWithFriends");
                  }
         var text = ["Share & challenge using #ChotaPandit", "Use headphones for better experience","No Sound For iOS users rn.Sorry","Add to home screen and play offline.","Tap here to switch Day/Night"];
         var counter = 0;
