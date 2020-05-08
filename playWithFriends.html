@@ -200,8 +200,10 @@ function onSignIn(googleUser) {
           <br>
           <div class="row">
           <div class="input-field col s12">
-          <input type="email" class="validate" id="friendMail" onsubmit="addFriend();">
+          <form id="addFriend" action="addFriend();">
+          <input type="email" class="validate" id="friendMail">
           <label for="friendMail">Email</label>
+          <input type="submit" name="Submit">
           </div>
           </div>
             <div id="leaderboard">
