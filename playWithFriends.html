@@ -13,7 +13,7 @@ function setCookie2(cname,cvalue,exdays) {
   // console.log( cname + "=" + cvalue + ";" + expires + ";path=/");
 }
 
-function getCookie2(cname) {
+function getCookie(cname) {
   var name = cname + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
   var ca = decodedCookie.split(';');
@@ -30,14 +30,14 @@ function getCookie2(cname) {
 }
 
 function check2() {
-  var user=getCookie2("email");
+  var user=getCookie("email");
   if (user != "") {
       // window.location.href = "https://www.chotapandit.com/play";
       var x = document.getElementById("out");
       x.style.display = "none";
       var x = document.getElementById("loggedIn");
       x.style.display = "block";      
-      document.getElementById("user-email").innerHTML = getCookie2('email');
+      document.getElementById("user-email").innerHTML = getCookie('email');
   } else {
       var x = document.getElementById("out");
       x.style.display = "block";
@@ -65,7 +65,7 @@ function loadDocFr() {
     elseif (this.readyState == 4  && this.status == 1) {
         alert('No such user.Please check the email with your friend.'); 
   };
-  var email=getCookie2("email");
+  var email=getCookie("email");
   var emaile=window.btoa(email);
   xhttp.open("GET", "https://chotapandit.online/v2/scores.php?email="+emaile, true);
   xhttp.send();
@@ -78,7 +78,7 @@ function addFriend() {
         console.log('Friend Added');
         }
   };
-  var mail=getCookie2("email");
+  var mail=getCookie("email");
   var maile=window.btoa(mail);
   var femail=document.getElementById("friendMail").value;
   var femaile=window.btoa(femail);
@@ -156,13 +156,13 @@ function onSignIn(googleUser) {
 <body onload="init2()">
 <script type="text/javascript">
 function init2(){
-  var user=getCookie2("email");
+  var user=getCookie("email");
   if (user != "") {
       var x = document.getElementById("out");
       x.style.display = "none";
       var x = document.getElementById("loggedIn");
       x.style.display = "block";      
-      document.getElementById("user-email").innerHTML = getCookie2("email");
+      document.getElementById("user-email").innerHTML = getCookie("email");
 
   } 
   else {
