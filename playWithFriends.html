@@ -92,7 +92,7 @@ function signUP(name,email,pic) {
   var namee=window.btoa(name);
   var pice=window.btoa(pic);
   var emaile=window.btoa(email);
-  xhttp.open("GET", "https://chotapandit.online/v2/signup.php?name="+namee+"mail="+emaile+"p="+pice, true);
+  xhttp.open("GET", "https://chotapandit.online/v2/signup.php?name="+namee+"&mail="+emaile+"&p="+pice, true);
   xhttp.send();
 }
 
