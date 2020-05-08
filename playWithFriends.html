@@ -60,7 +60,7 @@
     </div>
   </div>
 
-<div class="row" id='loggedIn'>
+<div class="row" id='loggedIn' stlye='display:none'>
     <div class="col s12 m12">
       <div class="card deep-orange lighten-2">
         <div class="card-content white-text">
@@ -140,7 +140,6 @@ function check() {
       x.style.display = "block";
       var x = document.getElementById("loggedIn");
       x.style.display = "none";      
-
   }
 }
 function op(arr) {
@@ -199,6 +198,7 @@ function signUP(name,email,pic) {
 
 
 function onSignIn(googleUser) {
+  alert('hi');
   var profile = googleUser.getBasicProfile();
   // console.log('ID: ' + profile.getId()); 
   console.log('Name: ' + profile.getName());
