@@ -75,10 +75,6 @@ function addFriend() {
     if (this.readyState == 4 && this.status == 200) { 
         console.log('Friend Added');
         }
-    else if (this.readyState == 4  && this.status == 400){
-        alert('No such user.Please check the email with your friend.'); 
-        console.log("No such user found.")
-    } 
     else{
         alert('No such user.Please check the email with your friend.'); 
         console.log("No such user found.")
