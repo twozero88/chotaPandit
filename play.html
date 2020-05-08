@@ -74,7 +74,7 @@ function getCookie(cname) {
   return "";
 }
 
-function opHS(arr){
+function opHSFr(arr){
     var out = "";
     var i;
     for(i = 0; i < arr.length; i++) {
@@ -83,12 +83,12 @@ function opHS(arr){
     document.getElementById("currentHS").innerHTML = out;
 
 }
-function getHS(){
+function getHSFr(){
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) { 
         var myArr = JSON.parse(this.responseText);
-        opHS(myArr);
+        opHSFr(myArr);
         }
   };
   var user=getCookie("email");
@@ -104,7 +104,7 @@ function check() {
 }
 function init(){
   check();
-  getHS();
+  getHSFr();
 }
 </script>
     <div id="loader"></div>

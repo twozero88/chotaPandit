@@ -42,7 +42,7 @@ function check() {
       x.style.display = "none";      
   }
 }
-function op(arr) {
+function opFr2(arr) {
     var out = "";
     var i;
     for(i = 0; i < arr.length; i++) {
@@ -52,12 +52,12 @@ function op(arr) {
     document.getElementById("demo").innerHTML = out;
 }
 
-function loadDoc() {
+function loadDocFr() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) { 
         var myArr = JSON.parse(this.responseText);
-        op(myArr);
+        opFr2(myArr);
         }
   };
   var email=getCookie("email");
@@ -81,7 +81,7 @@ function addFriend() {
   console.log(femaile);
   xhttp.open("GET", "https://chotapandit.online/v2/addFriend.php?mail="+maile+"&femail="+femaile, true);
   xhttp.send();
-  loadDoc();
+  loadDocFr();
 }
 
 
@@ -97,7 +97,7 @@ function signUP(name,email,pic) {
   var emaile=window.btoa(email);
   xhttp.open("GET", "https://chotapandit.online/v2/signup.php?name="+namee+"&mail="+emaile+"&p="+pice, true);
   xhttp.send();
-  loadDoc();
+  loadDocFr();
 }
 
 
