@@ -84,6 +84,7 @@ function opHS(arr){
 
 }
 function getHS(){
+  alert('getting hs');
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) { 
@@ -155,7 +156,8 @@ function init(){
         <span id="currentHS"></span>
         </a>
         <a id="leaderBoard" onclick="play()">Leaderboard</a>
-      </div>
+        </div>
+        <a href='/about'>About this website</a>
         <audio id="audi0" src="assets/audio_files/pushpa.mp3" ></audio>
         </div>
 
