@@ -28,7 +28,7 @@
       var email=getCookie("email");
       var emaile=window.btoa(email);
       var scoree=window.btoa(highScore);
-      xhttp.open("GET", "https://chotapandit.online/v2/updateScore.php?email="+ emailee +"&score="+scoree, true);
+      xhttp.open("GET", "https://chotapandit.online/v2/updateScore.php?email="+ emaile +"&score="+scoree, true);
       xhttp.send();
     }
   
