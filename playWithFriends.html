@@ -70,8 +70,8 @@ function loadDocFr() {
   };
   var email=getCookie("email");
   var emaile=window.btoa(email);
-  xhttp.open("POST", "https://chotapandit.online/v2/scores.php", true);
-  xhttp.send("email="+emaile);
+  xhttp.open("GET", "https://chotapandit.online/v2/scores.php?email="+emaile, true);
+  xhttp.send();
 }
 
 function addFriend() {
@@ -94,8 +94,8 @@ function addFriend() {
   console.log(femaile);
   var unix = Math.round(+new Date()/1000);
   var unixe=window.btoa(unix);
-  xhttp.open("POST", "https://chotapandit.online/v2/addFriend.php", true);
-  xhttp.send("mail="+maile+"&femail="+femaile+"&pwd="+unixe);
+  xhttp.open("GET", "https://chotapandit.online/v2/addFriend.php?mail="+maile+"&femail="+femaile+"&pwd="+unixe, true);
+  xhttp.send();
   loadDocFr();
 }
 
@@ -112,8 +112,8 @@ function signUP(name,email,pic) {
   var emaile=window.btoa(email);
   var unix = Math.round(+new Date()/1000);
   var unixe=window.btoa(unix);
-  xhttp.open("POST", "https://chotapandit.online/v2/signup.php", true);
-  xhttp.send("name="+namee+"&mail="+emaile+"&p="+pice+"&pwd="+unixe);
+  xhttp.open("GET", "https://chotapandit.online/v2/signup.php?name="+namee+"&mail="+emaile+"&p="+pice+"&pwd="+unixe, true);
+  xhttp.send();
   loadDocFr();
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -131,8 +131,8 @@ function signUP(name,email,pic) {
   console.log(maile);
   var unix = Math.round(+new Date()/1000)+1;
   var unixe=window.btoa(unix);
-  xhttp.open("POST", "https://chotapandit.online/v2/addFriend.php", true);
-  xhttp.send("mail="+maile+"femail="+maile+"pwd="+unixe);
+  xhttp.open("GET", "https://chotapandit.online/v2/addFriend.php?mail="+maile+"&femail="+maile+"&pwd="+unixe, true);
+  xhttp.send();
 }
 
 
