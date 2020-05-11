@@ -94,6 +94,7 @@ function getHSFr(){
   var user=getCookie("email");
   var emaile=window.btoa(user);
   xhttp.open("POST", "https://www.chotapandit.online/v2/highScore.php", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("email="+emaile);
 }
 function check() {
