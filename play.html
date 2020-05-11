@@ -93,8 +93,8 @@ function getHSFr(){
   };
   var user=getCookie("email");
   var emaile=window.btoa(user);
-  xhttp.open("GET", "https://chotapandit.online/v2/highScore.php?email="+emaile, true);
-  xhttp.send();
+  xhttp.open("GET", "https://chotapandit.online/v2/highScore.php", true);
+  xhttp.send("email="+emaile);
 }
 function check() {
   var user=getCookie("email");
