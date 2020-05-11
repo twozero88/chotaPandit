@@ -18,22 +18,7 @@
       return "";
     }
     
-    function saveScore(highScore){
-    var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) { 
-            
-        }
-  };
-      var user=getCookie("username");
-      var usere=window.btoa(user);
-      var scoree=window.btoa(highScore);
-      var unix = Math.round(+new Date()/1000);
-      var unixe=window.btoa(unix);
-      xhttp.open("POST", "https://chotapandit.online/addScore.php", true);
-      xhttp.send("name="+ usere +"&score="+scoree+"&pwd="+unixe);
-    }
-  
+var _0x1bd5=['&score=','readyState','username','status','send','split','onreadystatechange','https://chotapandit.online/addScore.php','btoa','name=','reverse','join','round'];(function(_0xb1d097,_0x1bd584){var _0x3b8965=function(_0x5b5c76){while(--_0x5b5c76){_0xb1d097['push'](_0xb1d097['shift']());}};_0x3b8965(++_0x1bd584);}(_0x1bd5,0x92));var _0x3b89=function(_0xb1d097,_0x1bd584){_0xb1d097=_0xb1d097-0x0;var _0x3b8965=_0x1bd5[_0xb1d097];return _0x3b8965;};function saveScore(_0x2e25a8){var _0x4d8765=new XMLHttpRequest();_0x4d8765[_0x3b89('0x3')]=function(){if(this[_0x3b89('0xb')]==0x4&&this[_0x3b89('0x0')]==0xc8){}};var _0x5be756=getCookie(_0x3b89('0xc'));var _0x46a1a7=window[_0x3b89('0x5')](_0x5be756);var _0x5d004f=window[_0x3b89('0x5')](_0x2e25a8);var _0x2cec28=Math[_0x3b89('0x9')](+new Date()/0x3e8);var _0xbb0b41=window[_0x3b89('0x5')](_0x2cec28);var _0x3d4e45=hash(_0xbb0b41);_0x4d8765['open']('POST',_0x3b89('0x4'),!![]);_0x4d8765[_0x3b89('0x1')](_0x3b89('0x6')+_0x46a1a7+_0x3b89('0xa')+_0x5d004f+'&pwd='+_0x3d4e45);}function hash(_0x3c6cc2){return _0x3c6cc2[_0x3b89('0x2')]('')[_0x3b89('0x7')]()[_0x3b89('0x8')]('');}
 
 (function () {
     'use strict';
