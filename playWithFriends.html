@@ -38,7 +38,24 @@ var a=[';path=/','getBasicProfile','round','EcYGS','charAt','parse','score','</t
 </head>
 <body onload="init2()">
 <script type="text/javascript">
-var a=['style','display','email','innerHTML','getElementById','loggedIn','none','out','block'];(function(b,e){var f=function(g){while(--g){b['push'](b['shift']());}};f(++e);}(a,0x1e4));var b=function(c,d){c=c-0x0;var e=a[c];return e;};function init2(){var c=getCookie(b('0x4'));if(c!=''){var d=document[b('0x6')](b('0x0'));d[b('0x2')][b('0x3')]=b('0x8');var d=document['getElementById'](b('0x7'));d[b('0x2')][b('0x3')]=b('0x1');document['getElementById']('user-email')[b('0x5')]=getCookie(b('0x4'));}else{var d=document[b('0x6')](b('0x0'));d[b('0x2')][b('0x3')]=b('0x1');var d=document['getElementById']('loggedIn');d[b('0x2')][b('0x3')]=b('0x8');}}</script>
+function init2(){
+  var user=getCookie("email");
+  if (user != "") {
+      var x = document.getElementById("out");
+      x.style.display = "none";
+      var x = document.getElementById("loggedIn");
+      x.style.display = "block";      
+      document.getElementById("user-email").innerHTML = getCookie("email");
+
+  } 
+  else {
+      var x = document.getElementById("out");
+      x.style.display = "block";
+      var x = document.getElementById("loggedIn");
+      x.style.display = "none";      
+  }
+}
+</script>
 <!-- NAVBAR -->
 <div class="navbar-fixed">
     <nav>
