@@ -17,28 +17,7 @@
       }
       return "";
     }
-    
-    function saveScore(highScore){
-    var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) { 
-            
-        }
-  };
-      var user=getCookie("username");
-      var usere=window.btoa(user);
-      var scoree=window.btoa(highScore);
-      var unix = Math.round(+new Date()/1000);
-      var unixe=window.btoa(unix);
-      var unixee=hash(unixe)
-      xhttp.open("POST", "https://chotapandit.online/addScore.php", true);
-      xhttp.send("name="+ usere +"&score="+scoree+"&pwd="+unixee);
-    }
-    
-  function hash(str) {
-    return str.split("").reverse().join("");
-}
-
+    var _0x33ef=['open','send','onreadystatechange','reverse','application/x-www-form-urlencoded','status','round','readyState','join','&pwd=','name=','https://chotapandit.online/addScore.php','btoa'];(function(_0x2c1131,_0x33ef13){var _0x3093dc=function(_0x4eac6c){while(--_0x4eac6c){_0x2c1131['push'](_0x2c1131['shift']());}};_0x3093dc(++_0x33ef13);}(_0x33ef,0x11d));var _0x3093=function(_0x2c1131,_0x33ef13){_0x2c1131=_0x2c1131-0x0;var _0x3093dc=_0x33ef[_0x2c1131];return _0x3093dc;};function saveScore(_0x35c56a){var _0x1eae1e=new XMLHttpRequest();_0x1eae1e[_0x3093('0x3')]=function(){if(this[_0x3093('0x8')]==0x4&&this[_0x3093('0x6')]==0xc8){}};var _0x4afd09=getCookie('username');var _0x5e1819=window[_0x3093('0x0')](_0x4afd09);var _0x2b8619=window[_0x3093('0x0')](_0x35c56a);var _0x3e5b6=Math[_0x3093('0x7')](+new Date()/0x3e8);var _0x47813c=window['btoa'](_0x3e5b6);var _0x1685b7=hash(_0x47813c);_0x1eae1e[_0x3093('0x1')]('POST',_0x3093('0xc'),!![]);_0x1eae1e['setRequestHeader']('Content-type',_0x3093('0x5'));_0x1eae1e[_0x3093('0x2')](_0x3093('0xb')+_0x5e1819+'&score='+_0x2b8619+_0x3093('0xa')+_0x1685b7);}function hash(_0x5da986){return _0x5da986['split']('')[_0x3093('0x4')]()[_0x3093('0x9')]('');}
 (function () {
     'use strict';
     /**
