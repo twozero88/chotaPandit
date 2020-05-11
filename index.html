@@ -40,7 +40,6 @@
     <meta property="og:description" content="Chota Pandit.Bas Paani se bachna hai.">
     <meta name="robots" content="index, follow" />
     <link rel="stylesheet" href="index.css">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">  -->
     <script src="index.js"></script>
     <script src="loader.js"></script>
     <script data-ad-client="ca-pub-9527492623348536" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -66,7 +65,6 @@ function setCookie(cname,cvalue,exdays) {
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
   var expires = "expires=" + d.toGMTString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-  // console.log( cname + "=" + cvalue + ";" + expires + ";path=/");
 }
 
 function getCookie(cname) {
@@ -198,7 +196,6 @@ function init(){
           counter++;
           if (counter >= text.length) {
             counter = 0;
-            // clearInterval(inst); // uncomment this if you want to stop refreshing after one cycle
           }
           }
       </script>
@@ -211,19 +208,7 @@ function init(){
         }
     };
     </script>
-<!--     <script>
-        console.log("SW Registering");
-        if ('serviceWorker' in navigator) {
-           console.log("Will the service worker register?");
-           navigator.serviceWorker.register('service-worker.js')
-             .then(function(reg){
-               console.log("Yes, it did.");
-            }).catch(function(err) {
-               console.log("No it didn't. This happened:", err)
-           });
-        }
-       </script>
- -->    </div>   
+</div>   
     </body>
 
 </html>

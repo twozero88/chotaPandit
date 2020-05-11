@@ -830,7 +830,6 @@
                 document.getElementById("highScore").innerHTML ="#ChotaPandit Highscore "+Math.ceil(this.highestScore/40);
                 saveScore(this.highestScore/40);
                 var globalHS=document.getElementById("currentHS").innerHTML;
-                console.log(globalHS);
                 if (parseInt(globalHS)<this.highestScore/40){
                     document.getElementById("currentHS").innerHTML=Math.ceil(this.highestScore/40);
                     alert("Yayy you just made a New Global Highscore");
