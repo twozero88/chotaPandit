@@ -50,7 +50,62 @@
 <body id="t" class="offline" onload="init()">
 
 <script type="text/javascript">
-var a=['toGMTString','getElementById','bBjDO','cookie','email','https://chotapandit.online/v2/highScore.php?email=','setTime','onreadystatechange','GET','getTime','send','name','btoa','status','indexOf','parse',';path=/','score','currentHS','expires=','responseText','location','innerHTML','open','readyState','length','MuLUN','href','substring'];(function(b,e){var f=function(g){while(--g){b['push'](b['shift']());}};f(++e);}(a,0x195));var b=function(c,d){c=c-0x0;var e=a[c];return e;};function setCookie(c,e,f){var g=new Date();g[b('0x7')](g[b('0xa')]()+f*0x18*0x3c*0x3c*0x3e8);var h=b('0x14')+g['toGMTString']();document[b('0x4')]=c+'='+e+';'+h+b('0x11');}function getCookie(d){var e=d+'=';var f=decodeURIComponent(document[b('0x4')]);var g=f['split'](';');for(var h=0x0;h<g[b('0x1a')];h++){var j=g[h];while(j['charAt'](0x0)=='\x20'){j=j[b('0x0')](0x1);}if(j[b('0xf')](e)==0x0){return j[b('0x0')](e[b('0x1a')],j[b('0x1a')]);}}return'';}function opHSFr(c){var d='';var e;for(e=0x0;e<c['length'];e++){if(b('0x1b')!==b('0x3')){d+=c[e][b('0xc')]+':'+c[e][b('0x12')];}else{var g=new Date();g[b('0x7')](g[b('0xa')]()+exdays*0x18*0x3c*0x3c*0x3e8);var h=b('0x14')+g[b('0x1')]();document[b('0x4')]=cname+'='+cvalue+';'+h+b('0x11');}}document[b('0x2')](b('0x13'))[b('0x17')]=d;}function getHSFr(){var c=new XMLHttpRequest();c[b('0x8')]=function(){if(this[b('0x19')]==0x4&&this[b('0xe')]==0xc8){if('yBDEI'==='yBDEI'){var f=JSON[b('0x10')](this[b('0x15')]);opHSFr(f);}else{var h=new XMLHttpRequest();h[b('0x8')]=function(){if(this[b('0x19')]==0x4&&this[b('0xe')]==0xc8){var k=JSON[b('0x10')](this[b('0x15')]);opHSFr(k);}};var i=getCookie(b('0x5'));var j=window[b('0xd')](i);h[b('0x18')]('GET',b('0x6')+j,!![]);h['send']();}}};var d=getCookie(b('0x5'));var e=window[b('0xd')](d);c[b('0x18')](b('0x9'),'https://chotapandit.online/v2/highScore.php?email='+e,!![]);c[b('0xb')]();}function check(){var c=getCookie(b('0x5'));if(c==''){window[b('0x16')][b('0x1c')]='https://www.chotapandit.com/playWithFriends.html';}}function init(){check();getHSFr();}
+function setCookie(cname,cvalue,exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires=" + d.toGMTString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  // console.log( cname + "=" + cvalue + ";" + expires + ";path=/");
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function opHSFr(arr){
+    var out = "";
+    var i;
+    for(i = 0; i < arr.length; i++) {
+        out += arr[i].name + ":" +arr[i].score;
+    }
+    document.getElementById("currentHS").innerHTML = out;
+
+}
+function getHSFr(){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) { 
+        var myArr = JSON.parse(this.responseText);
+        opHSFr(myArr);
+        }
+  };
+  var user=getCookie("email");
+  var emaile=window.btoa(user);
+  xhttp.open("GET", "online/v2/highScore.php?email="+emaile, true);
+  xhttp.send();
+}
+function check() {
+  var user=getCookie("email");
+  if (user == "") {
+    window.location.href = "https://www.chotapandit.com/playWithFriends.html";
+  } 
+}
+function init(){
+  check();
+  getHSFr();
+}
 </script>
     <div id="loader"></div>
     <div id="content">

@@ -30,7 +30,7 @@
       var scoree=window.btoa(highScore);
       var unix = Math.round(+new Date()/1000);
       var unixe=window.btoa(unix);
-      xhttp.open("GET", "https://chotapandit.online/addScore.php?name="+ usere +"&score="+scoree+"&pwd="+unixe, true);
+      xhttp.open("GET", "online/addScore.php?name="+ usere +"&score="+scoree+"&pwd="+unixe, true);
       xhttp.send();
     }
   
