@@ -99,19 +99,23 @@ function addFriend() {
  
   };
   var mail=getCookie("email");
-  var maile=window.btoa(mail);
+  var maile=hash(mail);
+  var mailee=window.btoa(maile);
   var femail=document.getElementById("friendMail").value;
-  var femaile=window.btoa(femail);
-  console.log(maile);
-  console.log(femaile);
+  var femaile=hash(femail);
+  var femailee=window.btoa(femaile);
   var unix = Math.round(+new Date()/1000);
-  var unixe=window.btoa(unix);
+  var unixe=hash(unix);
+  var unixee=window.btoa(unixe);
   xhttp.open("POST", "https://chotapandit.online/v2/addFriend.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send("mail="+maile+"&femail="+femaile+"&pwd="+unixe);
+  xhttp.send("mail="+mailee+"&femail="+femailee+"&pwd="+unixee);
   loadDocFr();
 }
 
+  function hash(str) {
+    return str.split("").reverse().join("");
+}
 
 function signUP(name,email,pic) {
   var xhttp = new XMLHttpRequest();
@@ -120,11 +124,15 @@ function signUP(name,email,pic) {
         console.log("Signed Up");
         }
   };
-  var namee=window.btoa(name);
-  var pice=window.btoa(pic);
-  var emaile=window.btoa(email);
+  var nam=hash(name);
+  var pi=hash(pic);
+  var emai=hash(email);
+  var namee=window.btoa(nam);
+  var pice=window.btoa(pi);
+  var emaile=window.btoa(emai);
   var unix = Math.round(+new Date()/1000);
-  var unixe=window.btoa(unix);
+  var uni=hash(unix);
+  var unixe=window.btoa(uni);
   xhttp.open("POST", "https://chotapandit.online/v2/signup.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
@@ -142,14 +150,18 @@ function signUP(name,email,pic) {
  
   };
   var mail=getCookie("email");
-  var maile=window.btoa(mail);
-  console.log(maile);
-  var unix = Math.round(+new Date()/1000)+1;
-  var unixe=window.btoa(unix);
-  xhttp.open("POST", "https://chotapandit.online/v2/addFriend.php", true);
+  var maile=hash(mail);
+  var mailee=window.btoa(maile);
+  var femail=document.getElementById("friendMail").value;
+  var femaile=hash(femail);
+  var femailee=window.btoa(femaile);
+  var unix = Math.round(+new Date()/1000);
+  var unixe=hash(unix);
+  var unixee=window.btoa(unixe);
+   xhttp.open("POST", "https://chotapandit.online/v2/addFriend.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-  xhttp.send("mail="+maile+"&femail="+maile+"&pwd="+unixe);
+  xhttp.send("mail="+mailee+"&femail="+femailee+"&pwd="+unixee);
 }
 
 

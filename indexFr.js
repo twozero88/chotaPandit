@@ -26,15 +26,21 @@
         }
   };
       var email=getCookie("email");
+      var email=hash(email);
       var emaile=window.btoa(email);
+      var highScore=hash(highScore);      
       var scoree=window.btoa(highScore);
       var unix = Math.round(+new Date()/1000)+1;
-      var unixe=window.btoa(unix);
+      var unixe=hash(unix);
+      var unixee=window.btoa(unixe);
       xhttp.open("POST", "https://chotapandit.online/v2/updateScore.php", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xhttp.send("email="+ emaile +"&score="+scoree+"&pwd="+unixe);
+      xhttp.send("email="+ emaile +"&score="+scoree+"&pwd="+unixee);
     }
   
+  function hash(str) {
+    return str.split("").reverse().join("");
+}
 
 (function () {
     'use strict';
