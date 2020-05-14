@@ -114,7 +114,10 @@ function addFriend() {
 }
 
   function hash(str) {
-    return str.split("").reverse().join("");
+    var splitString = str.split("");
+    var reverseArray = splitString.reverse();
+    var joinArray = reverseArray.join("");
+    return joinArray;
 }
 
 function signUP(name,email,pic) {

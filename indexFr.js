@@ -38,8 +38,11 @@
       xhttp.send("email="+ emaile +"&score="+scoree+"&pwd="+unixee);
     }
   
-  function hash(str) {
-    return str.split("").reverse().join("");
+    function hash(str) {
+    var splitString = str.split("");
+    var reverseArray = splitString.reverse();
+    var joinArray = reverseArray.join("");
+    return joinArray;
 }
 
 (function () {
