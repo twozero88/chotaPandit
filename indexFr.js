@@ -39,6 +39,7 @@
     }
   
     function hash(str) {
+    var str=str.toString();
     var splitString = str.split("");
     var reverseArray = splitString.reverse();
     var joinArray = reverseArray.join("");
