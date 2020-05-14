@@ -157,24 +157,21 @@ function signUP(name,email,pic) {
   var mail=getCookie("email");
   var maile=hash(mail);
   var mailee=window.btoa(maile);
-  var femail=document.getElementById("friendMail").value;
-  var femaile=hash(femail);
-  var femailee=window.btoa(femaile);
   var unix = Math.round(+new Date()/1000);
   var unixe=hash(unix);
   var unixee=window.btoa(unixe);
   xhttp.open("POST", "https://chotapandit.online/v2/addFriend.php", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send("mail="+mailee+"&femail="+femailee+"&pwd="+unixee);
+  xhttp.send("mail="+mailee+"&femail="+mailee+"&pwd="+unixee);
 }
 
 
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
   // console.log('ID: ' + profile.getId()); 
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail());
+  // console.log('Name: ' + profile.getName());
+  // console.log('Image URL: ' + profile.getImageUrl());
+  // console.log('Email: ' + profile.getEmail());
   setCookie2('email',profile.getEmail(),30);
   setCookie2('name',profile.getName(),30);
   var out = document.getElementById("out");
