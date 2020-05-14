@@ -122,6 +122,7 @@ function addFriend() {
 }
 
 function signUP(name,email,pic) {
+  alert("YE PROBLEM HAI");
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) { 
@@ -162,9 +163,8 @@ function signUP(name,email,pic) {
   var unix = Math.round(+new Date()/1000);
   var unixe=hash(unix);
   var unixee=window.btoa(unixe);
-   xhttp.open("POST", "https://chotapandit.online/v2/addFriend.php", true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
+  xhttp.open("POST", "https://chotapandit.online/v2/addFriend.php", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("mail="+mailee+"&femail="+femailee+"&pwd="+unixee);
 }
 
