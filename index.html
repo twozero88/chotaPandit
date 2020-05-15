@@ -122,7 +122,7 @@ function init(){
   checkCookie();
   getHS();
 }
-</script>
+   </script>
     <div id="loader"></div>
     <div id="content">
     <div id="messageBox" class="sendmessage">
@@ -209,6 +209,31 @@ function init(){
     };
     </script>
 </div>   
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Now play with your friends!</h4>
+      <p>Login with google and see a personalised leaderboard.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="/playWithFriends" class="modal-close waves-effect waves-green btn-flat">Play now!</a>
+    </div>
+  </div>
+  <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var Modalelem = document.querySelector('.modal');
+            var instance = M.Modal.init(Modalelem);
+            instance.open();
+        });
+
+</script>
+   <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+
+
     </body>
 
 </html>
