@@ -234,13 +234,15 @@ function init(){
     <script src="https://www.google.com/recaptcha/api.js?render=6Le5nP0UAAAAAPcLAUVQDqYMCH4mUqBYyw2_q5kv"></script>
     <script>
         grecaptcha.ready(function () {
-            grecaptcha.execute('YOUR_RECAPTCHA_SITE_KEY', { action: 'contact' }).then(function (token) {
+            grecaptcha.execute('6Le5nP0UAAAAAPcLAUVQDqYMCH4mUqBYyw2_q5kv', { action: 'contact' }).then(function (token) {
                 var recaptchaResponse = document.getElementById('recaptchaResponse');
                 recaptchaResponse.value = token;
             });
         });
     </script>
-
+    <style type="text/css">
+      .grecaptcha-badge { visibility: hidden; }
+    </style>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
             
